@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/handlebars.runtime-v4.0.4.js"></script>
+        <script src="http://tryhandlebarsjs.com/js/libs/modernizr-2.8.3.min.js"></script>
+        <script data-main="http://tryhandlebarsjs.com/js/script" src="components/requirejs-bower/require.js"></script>
+        <script src="js/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+        <script type="text/javascript">
+                alert("hello");
+                var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
+                        "{{kids.length}} kids:</p>" +
+                        "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
+                var template = Handlebars.compile(source);
+
+                var data = {"name": "Alan", "hometown": "Somewhere, TX",
+                    "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
+                var result = template(data);
+                alert(result);
+            
+        </script>
+        <div>TODO write content</div>
+    </body>
+</html>
